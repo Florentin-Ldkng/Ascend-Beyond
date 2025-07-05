@@ -1,12 +1,5 @@
 # Ascend Beyond  
-![Status](https://img.shields.io/badge/status-In_Development-blue)
-![Engine](https://img.shields.io/badge/engine-Unity-ffab00?logo=unity)
-![Language](https://img.shields.io/badge/language-C%23-239120?logo=csharp)
-![Platforms](https://img.shields.io/badge/platforms-Windows_&_Linux-3A3A3A)
-[![Join Discord](https://img.shields.io/badge/chat-Discord-5865F2?logo=discord)](https://discord.gg/tywQum7F)
-[![Devlogs](https://img.shields.io/badge/devlog-YouTube-red?logo=youtube)](https://www.youtube.com/@Florentin-Ldkng)
-[![Follow on X](https://img.shields.io/badge/follow-X-black?logo=x&logoColor=white)](https://x.com/Florentin_Ldkng)
-![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-In_Development-blue) ![Unity](https://img.shields.io/badge/Unity-Engine-ffab00?logo=unity) [![YouTube](https://img.shields.io/badge/Devlog-YouTube-red?logo=youtube)](https://www.youtube.com/@Florentin-Ldkng) [![Discord](https://img.shields.io/badge/Chat-Discord-5865F2?logo=discord)](https://discord.gg/tywQum7F)
 
 [![Watch the Trailer](https://i.imgur.com/pLdXhgv.gif)](https://youtu.be/dQw4w9WgXcQ)
 
