@@ -1,11 +1,13 @@
 # Ascend Beyond ![status-badge](https://img.shields.io/badge/status-In_Development-blue)
+[![Watch the Trailer](https://i.imgur.com/pLdXhgv.gif)](https://youtu.be/dQw4w9WgXcQ)
+
 ## About 
 Ascend Beyond is a minimalist procedural platformer designed to help me get back into programming.  
 The goal is to experiment with movement physics, procedural map generation, and basic Steam integration.  
 It’s still in early development – feel free to watch progress or contribute ideas!
 
 > [!NOTE]
-> Currently there is no steam page, it will be added here later
+> A Steam store page will be added at a later stage of development.
 
 ## Screenshots
 *(Coming soon – early prototypes will be added here.)*
