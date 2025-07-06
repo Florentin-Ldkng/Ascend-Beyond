@@ -179,7 +179,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -205,12 +205,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15366827, y: -0, z: -0, w: 0.98812246}
-  m_LocalPosition: {x: 0, y: 2.16, z: -4.76}
+  m_LocalRotation: {x: 0.15366828, y: -0, z: -0, w: 0.9881225}
+  m_LocalPosition: {x: 0, y: 6.06, z: -2.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 452694191}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 17.679, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -388,7 +388,6 @@ GameObject:
   - component: {fileID: 452694191}
   - component: {fileID: 452694190}
   - component: {fileID: 452694188}
-  - component: {fileID: 452694192}
   - component: {fileID: 452694193}
   m_Layer: 0
   m_Name: Player
@@ -409,8 +408,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7db143f9f256d4abb2a2a76bbee074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpModifier: 0
-  moveModifier: 10
+  currentState: 0
+  jumpModifier: 12
+  moveModifier: 20
+  gravityModifier: 2
+  movementSmoothing: 0.3
+  mouseSensitivity: 50
+  jumpBuffer: 5
+  playerChamera: {fileID: 330585546}
+  Velocity: {x: 0, y: 0, z: 0}
   i_asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   p_characterController: {fileID: 452694190}
 --- !u!143 &452694190
@@ -447,41 +453,13 @@ Transform:
   m_GameObject: {fileID: 452694187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1638485569}
-  - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &452694192
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452694187}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!136 &452694193
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -787,8 +765,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7db143f9f256d4abb2a2a76bbee074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   jumpModifier: 10
   moveModifier: 100
+  gravityModifier: 0
+  movementSmoothing: 0
+  mouseSensitivity: 0
+  jumpBuffer: 0
+  playerChamera: {fileID: 0}
+  Velocity: {x: 0, y: 0, z: 0}
   i_asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   p_characterController: {fileID: 0}
 --- !u!54 &1525905470
@@ -841,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -889,3 +874,4 @@ SceneRoots:
   - {fileID: 1457967742}
   - {fileID: 1525905468}
   - {fileID: 452694191}
+  - {fileID: 330585546}
