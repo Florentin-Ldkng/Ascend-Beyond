@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.0f, 100.0f)]
     public float mouseSensitivity;
     public int jumpBuffer;
-    public Transform playerChamera;
+    public Transform playerCamera;
     
     public Vector3 Velocity = Vector3.zero;
     public InputActionAsset i_asset;
@@ -46,15 +46,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        pJump();
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
         readMovementsVectors();
+        pJump();
         pLook();
         pMovement();
-
     }
 
     private void pJump()
@@ -83,18 +78,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private void pLook()
     {
-        float mouseX = lookVector.x * mouseSensitivity * Time.fixedDeltaTime;
-        float mouseY = lookVector.y * mouseSensitivity * Time.fixedDeltaTime;
+        float mouseX = lookVector.x * mouseSensitivity * Time.deltaTime;
+        float mouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
 
         yMouseRotation -= mouseY;
         yMouseRotation = Mathf.Clamp(yMouseRotation, -30, 60);
-        //playerChamera. = Quaternion.Euler(new Vector3(yMouseRotation, 0f, 0f));
+        //playerCamera. = Quaternion.Euler(new Vector3(yMouseRotation, 0f, 0f));
         // Berechne neue Kameraposition
+        
         Vector3 offset = Quaternion.Euler(yMouseRotation, transform.eulerAngles.y, 0) * new Vector3(0, 0, -4);
-        playerChamera.position = transform.position + offset;
-        playerChamera.LookAt(transform.position + Vector3.up * 1.5f);
+
+        playerCamera.position = transform.position + offset;
+        playerCamera.LookAt(transform.position + Vector3.up * 1.5f);
 
     }
     private void pMovement()
@@ -103,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         if (!p_characterController.isGrounded)
         {
             fixedFrameCounter++;
-            Velocity.y += -9.81f * gravityModifier * Time.fixedDeltaTime;
+            Velocity.y += -9.81f * gravityModifier * Time.deltaTime;
             Velocity.y = Mathf.Clamp(Velocity.y, -50f, 50f);
             currentState = MovementState.Airborne;
         }
@@ -127,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         // Sanftes Angleichen:
         currentVector = Vector3.Lerp(currentVector, targetMove, movementSmoothing);
 
-        p_characterController.Move((currentVector + Velocity) * Time.fixedDeltaTime);
+        p_characterController.Move((currentVector + Velocity) * Time.deltaTime);
 
 
         //p_characterController.Move(Velocity * Time.fixedDeltaTime);

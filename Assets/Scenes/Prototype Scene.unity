@@ -413,9 +413,9 @@ MonoBehaviour:
   moveModifier: 20
   gravityModifier: 2
   movementSmoothing: 0.3
-  mouseSensitivity: 50
+  mouseSensitivity: 20
   jumpBuffer: 5
-  playerChamera: {fileID: 330585546}
+  playerCamera: {fileID: 330585546}
   Velocity: {x: 0, y: 0, z: 0}
   i_asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   p_characterController: {fileID: 452694190}
@@ -772,7 +772,7 @@ MonoBehaviour:
   movementSmoothing: 0
   mouseSensitivity: 0
   jumpBuffer: 0
-  playerChamera: {fileID: 0}
+  playerCamera: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   i_asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   p_characterController: {fileID: 0}
@@ -860,6 +860,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9513742, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8039e7727196fed4ead36a64f1936daf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
